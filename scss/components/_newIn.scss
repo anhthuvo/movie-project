@@ -20,9 +20,7 @@
     }
 
     .newIn__list {
-
-        .newIn__list__item {
-            
+        .newIn__list__item {      
             .newIn__item__content {
                 position: relative;
                 border-radius: 10px;
@@ -59,6 +57,11 @@
                         height: 80px;
                         @include btn(transparent, 50%, 2px solid $white, 0);
                         margin-bottom: 20px;
+                        transition: all .5s;
+
+                        &:hover {
+                            transform: scale(0.9);
+                        }
                     }
 
                     a {
@@ -70,6 +73,15 @@
 
                     p {
                         @include Text($txtWhite, $p1, $fwMedium);
+                        margin-bottom: 0;
+
+                        @media (max-width: 991.98px) {
+                            font-size: $p2;
+                        }
+
+                        @media (max-width: 767.98px) {
+                            font-size: $p1;
+                        }
                     }
                 }
 
@@ -77,7 +89,7 @@
                     @include overlay(2);
                     @include linear-gradient(to top right);
                     opacity: .9;
-                    transform: skewX(45deg) scaleX(2.3);
+                    transform: skewX(45deg) scaleX(2.3) scaleY(1.1);
                     @include position(absolute, 0%, -230%, 2);
                     transition-duration: .5s;
                 }

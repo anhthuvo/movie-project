@@ -1,4 +1,4 @@
-.header, .header-black {
+.header {
     width: 100%;
     @include position(absolute, 0, 0, 10);
   
@@ -71,6 +71,30 @@
         }
       }
     }
+
+    &.header-black {
+      @include position(fixed, -80px, 0, 10);
+      background-color: $dark;
+      transition: all .5s;
+
+      p:first-child {
+        display: none;
+      }
+
+      .navbar-nav {
+        top: 68px;
+        border-bottom: none;
+        .nav-item {
+          .nav-link {
+            font-size: $p4;
+          }
+    
+          &.active .nav-link {
+            color: $txtDarkOrange;
+          }
+        }
+      }
+    }
   
     // Small devices (landscape phones, less than 768px)
     @media (max-width: 767.98px) {
@@ -81,21 +105,5 @@
     }
   }
 
-.header-black {
-  @include position(fixed, -80px, 0, 10);
-  background-color: $dark;
-  transition: all .5s;
-  .navbar-nav {
-    border-bottom: none;
-    .nav-item {
-      .nav-link {
-        font-size: $p4;
-      }
 
-      &.active .nav-link {
-        color: $txtDarkOrange;
-      }
-    }
-  }
-}
 
